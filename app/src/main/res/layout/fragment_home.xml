@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorTheme"
+    android:background="@color/colorPrimary"
     android:animateLayoutChanges="true"
     tools:context=".ui.home.HomeFragment"
     >
@@ -27,6 +27,53 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        android:background="@drawable/top_corner_border"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp">
+
+    <RelativeLayout
+        android:id="@+id/layoutSource"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_collapseMode="pin">
+
+        <ImageView
+            android:id="@+id/imv_source_bus"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/ic_bus"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/enter_source_hint"
+            android:paddingLeft="@dimen/_20sdp"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_toRightOf="@+id/imv_source_bus"/>
+
+    </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <include
+        android:id="@+id/layoutSourceDivider"
+        layout="@layout/divider"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/layoutSource"/>
+
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
@@ -35,8 +82,12 @@
     >
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="@dimen/_20sdp"
+       >
 
         <include layout="@layout/collapse_search_layout"/>
 
@@ -52,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_600sdp"
-                android:text="123"/>
+                android:text="   "/>
 
 
         </androidx.core.widget.NestedScrollView>
