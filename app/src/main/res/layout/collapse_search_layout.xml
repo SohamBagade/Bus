@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.bus.ui.home.HomeViewModel" />
+    </data>
+
 <com.google.android.material.appbar.CollapsingToolbarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         app:contentScrim="?attr/colorPrimary"
         android:layout_marginStart="@dimen/_14sdp"
         android:layout_marginEnd="@dimen/_14sdp"
@@ -114,3 +123,5 @@
         </androidx.cardview.widget.CardView>
 
     </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+</layout>
