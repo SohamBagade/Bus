@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.bus.ui.home.HomeViewModel" />
+    </data>
+
+<com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentScrim="?attr/colorPrimary"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        app:layout_scrollFlags="scroll|enterAlways|snap">
+
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.5"/>-->
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_collapseMode="parallax"
+            android:background="@drawable/bottom_corner_border"
+            app:layout_collapseParallaxMultiplier="1"
+            app:cardBackgroundColor="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/collapsed_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layoutDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_below="@+id/layoutDestinationDivider">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/ic_bus"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        />
+
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/layoutDateDivider"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_below="@+id/layoutDate"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_below="@+id/layoutSourceDivider">
+
+                    <ImageView
+                        android:id="@+id/imv_destination_bus"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/ic_bus"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/enter_destination_hint"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_toRightOf="@+id/imv_destination_bus"/>
+
+
+
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/layoutDestinationDivider"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_below="@+id/layoutDestination"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_below="@+id/layoutDateDivider">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="SEARCH"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_border"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+</layout>
