@@ -9,7 +9,7 @@
             type="com.example.bus.ui.home.HomeViewModel" />
     </data>
 
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,6 +17,20 @@
     android:animateLayoutChanges="true"
     tools:context=".ui.home.HomeFragment"
     >
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:scaleType="fitCenter"
+        app:civ_border_width="0dp"
+        android:elevation="@dimen/_2sdp"
+        app:srcCompat="@drawable/ic_switch"
+        android:layout_marginTop="-22dp"
+        android:animateLayoutChanges="true"
+        android:layout_below="@+id/sourceContainer"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_alignParentEnd="true"/>
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/AppBar"
@@ -36,10 +50,12 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/sourceContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
         android:background="@drawable/top_corner_border"
+        android:layout_below="@+id/AppBar"
         android:layout_marginStart="@dimen/_14sdp"
         android:layout_marginEnd="@dimen/_14sdp">
 
@@ -69,6 +85,20 @@
             android:textColor="@android:color/darker_gray"
             android:layout_toRightOf="@+id/imv_source_bus"/>
 
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imv_search"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:src="@drawable/ic_search"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:scaleType="centerInside"/>
+
+
+
     </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
@@ -80,13 +110,14 @@
         android:layout_marginEnd="@dimen/_14sdp"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
-        android:layout_below="@+id/layoutSource"/>
+        android:layout_below="@+id/sourceContainer"/>
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorTheme"
+    android:layout_below="@+id/layoutSourceDivider"
     >
 
     <com.google.android.material.appbar.AppBarLayout
@@ -121,6 +152,6 @@
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-</LinearLayout>
+</RelativeLayout>
 
 </layout>
