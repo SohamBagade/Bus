@@ -79,6 +79,7 @@
                         />
 
                     <TextView
+                        android:id="@+id/tv_destination"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -106,6 +107,7 @@
                     android:layout_below="@+id/layoutDateDivider">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_search"
                         android:layout_centerVertical="true"
                         android:layout_width="match_parent"
                         android:layout_marginStart="@dimen/_20sdp"

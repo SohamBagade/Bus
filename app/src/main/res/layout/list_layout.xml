@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="@dimen/_85sdp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    android:layout_margin="@dimen/_8sdp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <ImageView
+        android:id="@+id/img_booking"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:src="@drawable/ic_car"/>
+
+        <TextView
+            android:id="@+id/tv_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rPool"
+            android:textColor="#000000"
+            android:textSize="@dimen/_12ssp"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
