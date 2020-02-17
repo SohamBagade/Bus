@@ -16,7 +16,7 @@
         app:contentScrim="?attr/colorPrimary"
         android:layout_marginStart="@dimen/_14sdp"
         android:layout_marginEnd="@dimen/_14sdp"
-        app:layout_scrollFlags="scroll|enterAlways|snap">
+        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap">
 
         <!--<ImageView
             android:layout_width="wrap_content"
@@ -25,19 +25,13 @@
             app:layout_collapseParallaxMultiplier="0.5"/>-->
 
 
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_collapseMode="parallax"
-            android:background="@drawable/bottom_corner_border"
-            app:layout_collapseParallaxMultiplier="1"
-            app:cardBackgroundColor="@color/white">
-
             <RelativeLayout
                 android:id="@+id/collapsed_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax"
+                android:background="@drawable/bottom_corner_border"
+                app:layout_collapseParallaxMultiplier="1"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -67,7 +61,15 @@
                     android:id="@+id/layoutDestination"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
-                    android:layout_below="@+id/layoutSourceDivider">
+                    >
+
+                    <include
+                        android:id="@+id/layoutSourceDivider"
+                        layout="@layout/divider"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        />
 
                     <ImageView
                         android:id="@+id/imv_destination_bus"
@@ -122,7 +124,6 @@
 
             </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
 
     </com.google.android.material.appbar.CollapsingToolbarLayout>
 

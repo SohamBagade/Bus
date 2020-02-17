@@ -11,7 +11,7 @@
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:animateLayoutChanges="true"
@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/ic_switch"
         android:layout_marginTop="-22dp"
         android:animateLayoutChanges="true"
-        android:layout_below="@+id/sourceContainer"
+        android:layout_below="@+id/layoutSource"
         android:layout_marginEnd="@dimen/_16sdp"
         android:layout_alignParentEnd="true"/>
 
@@ -49,20 +49,14 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/sourceContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/white"
-        android:background="@drawable/top_corner_border"
-        android:layout_below="@+id/AppBar"
-        android:layout_marginStart="@dimen/_14sdp"
-        android:layout_marginEnd="@dimen/_14sdp">
-
     <RelativeLayout
         android:id="@+id/layoutSource"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/top_corner_border"
+        android:layout_below="@+id/AppBar"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
         app:layout_collapseMode="pin">
 
         <ImageView
@@ -91,7 +85,7 @@
             android:layout_width="@dimen/_36sdp"
             android:layout_height="@dimen/_36sdp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:src="@drawable/ic_search"
             android:layout_centerVertical="true"
             android:animateLayoutChanges="true"
@@ -102,23 +96,12 @@
 
     </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <include
-        android:id="@+id/layoutSourceDivider"
-        layout="@layout/divider"
-        android:layout_marginStart="@dimen/_14sdp"
-        android:layout_marginEnd="@dimen/_14sdp"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_below="@+id/sourceContainer"/>
-
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorTheme"
-    android:layout_below="@+id/layoutSourceDivider"
+    android:layout_below="@+id/layoutSource"
     >
 
     <com.google.android.material.appbar.AppBarLayout
